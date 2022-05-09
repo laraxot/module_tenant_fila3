@@ -1,0 +1,26 @@
+{
+    "name": "laraxot/module_tenant",
+    "description": "",
+    "authors": [{
+        "name": "Marco Xot",
+        "email": "marco.sottana@gmail.com"
+    }],
+    "require": {
+        "laraxot/module_xot": "dev-master"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Tenant\\Providers\\TenantServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Tenant\\": ""
+        }
+    }
+}
