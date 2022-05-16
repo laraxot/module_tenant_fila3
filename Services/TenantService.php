@@ -41,10 +41,12 @@ class TenantService {
 
         $server_name = $default;
         if (isset($_SERVER['SERVER_NAME']) && '127.0.0.1' !== $_SERVER['SERVER_NAME']) {
-            $server_name = $_SERVER['SERVER_NAME'];
+            $server_name = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'];
         }
 
         $server_name = Str::replace('www.', '', $server_name);
+
+        //die('<pre>'.print_r($_SERVER,true).'</pre>');
 
         $tmp = collect(explode('.', $server_name))
             ->map(
