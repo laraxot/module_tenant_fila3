@@ -46,7 +46,7 @@ class TenantService {
 
         $server_name = Str::replace('www.', '', $server_name);
 
-        //die('<pre>'.print_r($_SERVER,true).'</pre>');
+        // die('<pre>'.print_r($_SERVER,true).'</pre>');
 
         $tmp = collect(explode('.', $server_name))
             ->map(
