@@ -64,24 +64,21 @@ class TenantService {
             return $tmp->implode('/');
         }
         $config_file = config_path($tmp->slice(0, -1)->implode(\DIRECTORY_SEPARATOR));
-        if (file_exists($config_file) && $tmp->count() >= 2) {
-            //    dd(['config_file' => $config_file, 'line' => __LINE__]);
+        if (file_exists($config_file) && $tmp->count() > 2) {
+            // dd(['config_file' => $config_file, 'tmp' => $tmp, 'line' => __LINE__]);
 
             return $tmp->slice(0, -1)->implode('/');
         }
-
-        // dd([
-        //    'tmp' => $tmp,
-        //    'line' => __LINE__,
-        // ]);
 
         // default
 
         $default = str_replace('.', '-', $default);
         if (file_exists(base_path('config/'.$default)) && '' !== $default) {
+            // dd(['default' => $default, 'line' => __LINE__,]);
             return $default;
         }
 
+        // dd(['localhost' => 'localhost','line' => __LINE__,]);
         return 'localhost';
     }
 
@@ -366,7 +363,7 @@ class TenantService {
                     ];
                 }
             )
-        ->all();
+            ->all();
 
         return $rows;
     }
