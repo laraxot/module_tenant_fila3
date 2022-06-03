@@ -7,14 +7,15 @@ namespace Modules\Tenant\Services;
 use Exception;
 // use Illuminate\Support\Facades\Storage;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Modules\Xot\Services\FileService;
-use Modules\Xot\Services\PanelService;
+use Illuminate\Support\Collection;
 use Nwidart\Modules\Facades\Module;
+use Illuminate\Support\Facades\File;
+use Modules\Xot\Services\FileService;
+use Illuminate\Support\Facades\Config;
+use Modules\Xot\Services\PanelService;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TenantService.
@@ -125,7 +126,11 @@ class TenantService {
             Config::set('morph_map', $merge_conf);
             $res = config($key);
 
-            return $res;
+            if(is_numeric($res) || is_string($res) || is_array($res)){
+                return $res;
+            }else{
+                throw new Exception('['.__LINE__.']['.__FILE__.']');
+            }
         }
 
         $group = collect(explode('.', $key))->first();
@@ -147,6 +152,9 @@ class TenantService {
         // -- ogni modulo ha la sua connessione separata
         // -- replicazione liveuser con lu .. tenere lu anche in database
         if ('database' === $key) {
+            /**
+             * @var Collection<\Nwidart\Modules\Module>
+             */
             $modules = Module::toCollection();
             foreach ($modules as $item) {
                 $name = $item->getSnakeName();
@@ -178,12 +186,17 @@ class TenantService {
             ]);
             */
             throw new Exception('['.__LINE__.']['.class_basename(__CLASS__).']');
-            self::saveConfig(['name' => $group, 'data' => $data]);
+            //self::saveConfig(['name' => $group, 'data' => $data]);
 
-            return $default;
+            //return $default;
         }
 
-        return $res;
+        if(is_numeric($res) || is_string($res) || is_array($res)){
+            return $res;
+        }else{
+            throw new Exception('['.__LINE__.']['.__FILE__.']');
+        }
+        //return $res;
     }
 
     public static function getConfigPath(string $key): string {
@@ -299,15 +312,17 @@ class TenantService {
      */
     public static function modelEager(string $name): \Illuminate\Database\Eloquent\Builder {
         $model = self::model($name);
-        if (null === $model) {
+        //Strict comparison using === between null and Illuminate\Database\Eloquent\Model will always evaluate to false.
+        //if (null === $model) {
             // return null;
-            throw new \Exception('model is null');
-        }
+        //    throw new \Exception('model is null');
+        //}
         $panel = PanelService::make()->get($model);
-        if (null === $panel) {
+        //Strict comparison using === between null and Modules\Xot\Contracts\PanelContract will always evaluate to false.
+        //if (null === $panel) {
             // return null;
-            throw new \Exception('panel is null');
-        }
+        //    throw new \Exception('panel is null');
+        //}
         $with = $panel->with();
         // $model = $model->load($with);
         $model = $model->with($with);
