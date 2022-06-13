@@ -119,6 +119,9 @@ class TenantService {
             if (File::exists($path)) {
                 $tenant_conf = File::getRequire($path);
             }
+            if (! \is_array($tenant_conf)) {
+                $tenant_conf = [];
+            }
             $merge_conf = collect($models)
                 ->merge($original_conf)
                 ->merge($tenant_conf)
