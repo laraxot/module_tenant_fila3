@@ -33,6 +33,7 @@ class TenantService {
      * Undocumented function.
      */
     public static function getName(array $params = []): string {
+        // *
         $default = env('APP_URL');
         if (! \is_string($default)) {
             // throw new Exception('['.$default.']['.__LINE__.']['.class_basename(__CLASS__).']');
@@ -46,7 +47,8 @@ class TenantService {
         }
 
         $server_name = Str::replace('www.', '', $server_name);
-
+        // */
+        // $server_name = getServerName();
         // die('<pre>'.print_r($_SERVER,true).'</pre>');
 
         $tmp = collect(explode('.', $server_name))
