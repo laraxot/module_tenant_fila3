@@ -195,11 +195,13 @@ class TenantService {
 
             // return $default;
         }
-
-        if (is_numeric($res) || is_string($res) || is_array($res)) {
+        
+        //dddx(gettype($res));//array;
+        if (is_numeric($res) || is_string($res) || is_array($res) || is_null($res)) {
             return $res;
         } else {
-            throw new Exception('['.__LINE__.']['.__FILE__.']');
+            dddx($res);
+            throw new Exception('['.__LINE__.']['.class_basename(__CLASS__).']');
         }
         // return $res;
     }
