@@ -22,10 +22,10 @@ class TenantServiceProvider extends XotBaseServiceProvider {
         $this->mergeConfigs();
 
         if (Request::has('act') && 'migrate' === Request::input('act')) {
-            DB::purge('mysql'); //Call to a member function prepare() on null
+            DB::purge('mysql'); // Call to a member function prepare() on null
             DB::reconnect('mysql');
         }
-        //DB::purge(); //Call to a member function prepare() on null
+        // DB::purge(); //Call to a member function prepare() on null
         // Database connection [mysql] not configured.
         DB::reconnect();
         Schema::defaultStringLength(191);
@@ -44,11 +44,11 @@ class TenantServiceProvider extends XotBaseServiceProvider {
             $tmp = TenantService::config($v['name']);
         }
 
-        //DB::purge('mysql');//Call to a member function prepare() on null
-        //DB::purge('liveuser_general');
-        //DB::reconnect();
-        //dddx(config('modules'));
+        // DB::purge('mysql');//Call to a member function prepare() on null
+        // DB::purge('liveuser_general');
+        // DB::reconnect();
+        // dddx(config('modules'));
     }
 
-    //end mergeConfigs
+    // end mergeConfigs
 }
