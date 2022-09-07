@@ -51,4 +51,7 @@ class TenantServiceProvider extends XotBaseServiceProvider {
     }
 
     // end mergeConfigs
+
+    public function registerCallback(): void {
+    }
 }
