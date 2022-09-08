@@ -109,7 +109,7 @@ class TenantService {
      * @return string|int|array|float|null
      */
     public static function config(string $key, $default = null) {
-        if (inAdmin() && Str::startsWith($key, 'morph_map') && null !== (\Request::segment(2))) {
+        if (inAdmin() && Str::startsWith($key, 'morph_map') && null !== \Request::segment(2)) {
             $module_name = \Request::segment(2);
             $models = getModuleModels($module_name);
             $original_conf = config('morph_map');
@@ -195,8 +195,8 @@ class TenantService {
 
             // return $default;
         }
-        
-        //dddx(gettype($res));//array;
+
+        // dddx(gettype($res));//array;
         if (is_numeric($res) || is_string($res) || is_array($res) || is_null($res)) {
             return $res;
         } else {
