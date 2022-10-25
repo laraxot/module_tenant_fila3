@@ -384,9 +384,10 @@ class TenantService {
                         'name' => $item->getFilenameWithoutExtension(),
                     ];
                 }
-            )
+            )->values()
             ->all();
-
+        
+        
         return $rows;
     }
 }
