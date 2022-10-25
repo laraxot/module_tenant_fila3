@@ -131,7 +131,7 @@ class TenantService {
             Config::set('morph_map', $merge_conf);
             $res = config($key);
 
-            if (is_numeric($res) || is_string($res) || is_array($res)) {
+            if (is_numeric($res) || \is_string($res) || \is_array($res)) {
                 return $res;
             } else {
                 throw new Exception('['.__LINE__.']['.__FILE__.']');
@@ -197,7 +197,7 @@ class TenantService {
         }
 
         // dddx(gettype($res));//array;
-        if (is_numeric($res) || is_string($res) || is_array($res) || is_null($res)) {
+        if (is_numeric($res) || \is_string($res) || \is_array($res) || null === $res) {
             return $res;
         } else {
             dddx($res);
@@ -253,7 +253,7 @@ class TenantService {
         $config_data = Arr::sortRecursive($config_data);
 
         $path = self::filePath($name.'.php');
-        $content = '<'.'?'.'php'.\chr(13).\chr(13).' return '.var_export($config_data, true).';';
+        $content = '<?php'.\chr(13).\chr(13).' return '.var_export($config_data, true).';';
         $content = str_replace('\\\\', '\\', $content);
         // dddx(['path' => $path, 'content' => $content]);
         File::put($path.'', $content);
@@ -354,7 +354,7 @@ class TenantService {
                 return file_exists($path);
             }
         );
-        if (! is_string($path)) {
+        if (! \is_string($path)) {
             throw new Exception('['.__LINE__.']['.__FILE__.']');
         }
 
@@ -386,8 +386,7 @@ class TenantService {
                 }
             )->values()
             ->all();
-        
-        
+
         return $rows;
     }
 }
