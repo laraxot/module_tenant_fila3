@@ -9,5 +9,6 @@ use Modules\Xot\Models\Panels\XotBasePanel;
 /**
  * Class _ModulePanel.
  */
-class _ModulePanel extends XotBasePanel {
+class _ModulePanel extends XotBasePanel
+{
 }
