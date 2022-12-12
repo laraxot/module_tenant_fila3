@@ -27,4 +27,25 @@ Il parametro **pub_theme** determina quale tra i temi installati nella base, vie
 
 Il parametro **primary_lang** determina la lingua di default utilizzata nel progetto.
 
+### Parametro home {#parametro-home}
 
+Un altro parametro che si può inserire nel file xra.php è **'home'**:
+
+```php
+return [
+    // ...
+    'home' => 'template.homepage',
+    // ...
+];
+```
+esso indicherà che per la home del frontend verrà utilizzata la pagina blade laravel\Themes\pub_theme\Resources\views\home\template\homepage.blade.php.
+
+Se non specificata, per la homepage del frontend verrà utilizzata la blade laravel\Themes\pub_theme\Resources\views\home\01.blade.php.
+
+### Parametro adm_home {#parametro-adm_home}
+
+Come il parametro 'home', anche il parametro **'adm_home'** indica la blade che verrà utilizzata per la homepage dell'amministrazione.
+
+Di default viene utilizzata **laravel\Themes\adm_theme\Resources\views\admin\dashboard\01.blade.php**, blade importante perchè mette a disposizione l'utilizzo di blade personalizzate per ogni modulo utilizzato.
+
+**nome_modulo::admin.dashboard.item** è la blade che dovrà essere creata per ogni modulo.

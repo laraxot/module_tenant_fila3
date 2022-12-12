@@ -16,7 +16,11 @@ return [
     'File di configurazione' => [
         'url' => 'docs/configuration_files',
         'children' => [
-            'xra.php' => 'docs/xra',
+            'file xra.php' => 'docs/xra',
+            // 'file metatag.php' => 'docs/metatag',
+            // 'file filesystems.php' => 'docs/filesystems',
+            // 'file database.php' => 'docs/database',
+            // 'files menu_builder' => 'docs/menu_builder',
         ],
     ],
 ];
