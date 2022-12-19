@@ -240,6 +240,7 @@ class TenantService {
         }
         */
         $path = self::filePath($name.'.php');
+        
         $config_data = [];
         if (File::exists($path)) {
             $config_data = File::getRequire($path);
@@ -255,7 +256,7 @@ class TenantService {
         $path = self::filePath($name.'.php');
         $content = '<?php'.\chr(13).\chr(13).' return '.var_export($config_data, true).';';
         $content = str_replace('\\\\', '\\', $content);
-        // dddx(['path' => $path, 'content' => $content]);
+       
         File::put($path.'', $content);
     }
 
