@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Modules\Xot\Services\FileService;
-use Modules\Xot\Services\PanelService;
+use Modules\Cms\Services\PanelService;
 use Nwidart\Modules\Facades\Module;
 
 /**
@@ -326,7 +326,7 @@ class TenantService {
         //    throw new \Exception('model is null');
         // }
         $panel = PanelService::make()->get($model);
-        // Strict comparison using === between null and Modules\Xot\Contracts\PanelContract will always evaluate to false.
+        // Strict comparison using === between null and Modules\Cms\Contracts\PanelContract will always evaluate to false.
         // if (null === $panel) {
         // return null;
         //    throw new \Exception('panel is null');
