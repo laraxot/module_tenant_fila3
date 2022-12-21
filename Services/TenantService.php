@@ -109,9 +109,11 @@ class TenantService {
      * @return string|int|array|float|null
      */
     public static function config(string $key, $default = null) {
+        /*
         if(app()->runningInConsole()){
             return config($key, $default);
         }
+        */
         if (inAdmin() && Str::startsWith($key, 'morph_map') && null !== \Request::segment(2)) {
             $module_name = \Request::segment(2);
             $models = getModuleModels($module_name);
