@@ -19,7 +19,6 @@ class TenantServiceProvider extends XotBaseServiceProvider {
     public string $module_name = 'tenant';
 
     public function bootCallback(): void {
-
         $this->mergeConfigs();
 
         if (Request::has('act') && 'migrate' === Request::input('act')) {
@@ -37,7 +36,6 @@ class TenantServiceProvider extends XotBaseServiceProvider {
         }
 
         Relation::morphMap($map);
-
     }
 
     public function mergeConfigs(): void {

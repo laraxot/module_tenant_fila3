@@ -13,8 +13,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Modules\Xot\Services\FileService;
 use Modules\Cms\Services\PanelService;
+use Modules\Xot\Services\FileService;
 use Nwidart\Modules\Facades\Module;
 
 /**
