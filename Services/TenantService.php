@@ -20,7 +20,8 @@ use Nwidart\Modules\Facades\Module;
 /**
  * Class TenantService.
  */
-class TenantService {
+class TenantService
+{
     // public static $panel;
 
     /*
@@ -32,7 +33,8 @@ class TenantService {
     /**
      * Undocumented function.
      */
-    public static function getName(array $params = []): string {
+    public static function getName(array $params = []): string
+    {
         // *
         $default = env('APP_URL');
         if (! \is_string($default)) {
@@ -90,7 +92,8 @@ class TenantService {
     /**
      * Undocumented function.
      */
-    public static function filePath(string $filename): string {
+    public static function filePath(string $filename): string
+    {
         $path = base_path('config/'.self::getName().'/'.$filename);
         $path = str_replace(['/', '\\'], [\DIRECTORY_SEPARATOR, \DIRECTORY_SEPARATOR], $path);
 
@@ -108,7 +111,8 @@ class TenantService {
      *
      * @return string|int|array|float|null
      */
-    public static function config(string $key, $default = null) {
+    public static function config(string $key, $default = null)
+    {
         /*
         if(app()->runningInConsole()){
             return config($key, $default);
@@ -211,14 +215,16 @@ class TenantService {
         // return $res;
     }
 
-    public static function getConfigPath(string $key): string {
+    public static function getConfigPath(string $key): string
+    {
         $tenant_name = self::getName();
         $path = str_replace('/', '.', $tenant_name).'.'.$key;
 
         return $path;
     }
 
-    public static function saveConfig(array $params): void {
+    public static function saveConfig(array $params): void
+    {
         $name = 'xra';
         $data = [];
         extract($params);
@@ -268,7 +274,8 @@ class TenantService {
     /**
      * Undocumented function.
      */
-    public static function modelClass(string $name): ?string {
+    public static function modelClass(string $name): ?string
+    {
         $name = Str::singular($name);
         $name = Str::snake($name);
 
@@ -312,7 +319,8 @@ class TenantService {
     /**
      * @throws \ReflectionException
      */
-    public static function model(string $name): Model {
+    public static function model(string $name): Model
+    {
         $class = self::modelClass($name);
         $model = app($class);
 
@@ -323,7 +331,8 @@ class TenantService {
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      * @throws \ReflectionException
      */
-    public static function modelEager(string $name): \Illuminate\Database\Eloquent\Builder {
+    public static function modelEager(string $name): \Illuminate\Database\Eloquent\Builder
+    {
         $model = self::model($name);
         // Strict comparison using === between null and Illuminate\Database\Eloquent\Model will always evaluate to false.
         // if (null === $model) {
@@ -346,7 +355,8 @@ class TenantService {
     /**
      * Find the path to a localized Markdown resource. copiata da jetstream.php.
      */
-    public static function localizedMarkdownPath(string $name): string {
+    public static function localizedMarkdownPath(string $name): string
+    {
         $localName = preg_replace('#(\.md)$#i', '.'.app()->getLocale().'$1', $name);
         $lang = app()->getLocale();
         $paths = [
@@ -370,7 +380,8 @@ class TenantService {
     /**
      * @return array
      */
-    public static function getConfigNames() {
+    public static function getConfigNames()
+    {
         $name = self::getName(); //  local/ptvx
 
         $dir = config_path($name);
