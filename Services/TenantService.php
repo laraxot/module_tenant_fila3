@@ -196,7 +196,7 @@ class TenantService {
             ]);
             */
             throw new \Exception('['.__LINE__.']['.class_basename(__CLASS__).']');
-            // self::saveConfig(['name' => $group, 'data' => $data]);
+            // self::saveConfig($group,$data);
 
             // return $default;
         }
@@ -218,11 +218,7 @@ class TenantService {
         return $path;
     }
 
-    public static function saveConfig(array $params): void {
-        $name = 'xra';
-        $data = [];
-        extract($params);
-
+    public static function saveConfig(string $name, array $data): void {
         /*
         $tennant_name = self::getName();
         $config_name = $tennant_name.'.'.$name;
@@ -283,7 +279,7 @@ class TenantService {
             $class = $models[$name];
             $data = [];
             $data[$name] = $class;
-            self::saveConfig(['name' => 'morph_map', 'data' => $data]);
+            self::saveConfig('morph_map', $data);
         }
         // $model = app($class);
         if (! \is_string($class)) {
