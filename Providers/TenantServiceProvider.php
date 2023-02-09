@@ -11,16 +11,14 @@ use Illuminate\Support\Facades\Schema;
 use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
-class TenantServiceProvider extends XotBaseServiceProvider
-{
+class TenantServiceProvider extends XotBaseServiceProvider {
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
 
     public string $module_name = 'tenant';
 
-    public function bootCallback(): void
-    {
+    public function bootCallback(): void {
         $this->mergeConfigs();
 
         if (Request::has('act') && 'migrate' === Request::input('act')) {
@@ -40,22 +38,16 @@ class TenantServiceProvider extends XotBaseServiceProvider
         Relation::morphMap($map);
     }
 
-    public function mergeConfigs(): void
-    {
+    public function mergeConfigs(): void {
         $configs = TenantService::getConfigNames();
+
         foreach ($configs as $v) {
             $tmp = TenantService::config($v['name']);
         }
-
-        // DB::purge('mysql');//Call to a member function prepare() on null
-        // DB::purge('liveuser_general');
-        // DB::reconnect();
-        // dddx(config('modules'));
     }
 
     // end mergeConfigs
 
-    public function registerCallback(): void
-    {
+    public function registerCallback(): void {
     }
 }
