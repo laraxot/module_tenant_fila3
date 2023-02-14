@@ -370,27 +370,27 @@ class TenantService {
      */
     public static function getConfigNames() {
         $name = self::getName();
-        if (app()->runningInConsole()) {
-            // File::makeDirectory(config_path($name), 0755, true, true);
-            // File::copyDirectory(realpath(__DIR__.'/../Config'), config_path($name));
+        // if (app()->runningInConsole()) {
+        // File::makeDirectory(config_path($name), 0755, true, true);
+        // File::copyDirectory(realpath(__DIR__.'/../Config'), config_path($name));
 
-            /*
-            //  Using $this when not in object context
-            $this->publishes([
-                __DIR__ . '/../Config/xra.php' => config_path('xra.php'),
-            ], 'config');
-            */
-            // Using $this when not in object context
-            // $this->mergeConfigFrom(, 'xra');
-            $path = __DIR__.'/../Config/xra.php';
-            $key = 'xra';
-            $config = app()->make('config');
-            $config->set($key, array_merge(
-                require $path, $config->get($key, [])
-            ));
-            // dddx($name);
-            // dddx();
-        }
+        /*
+        //  Using $this when not in object context
+        $this->publishes([
+            __DIR__ . '/../Config/xra.php' => config_path('xra.php'),
+        ], 'config');
+        */
+        // Using $this when not in object context
+        // $this->mergeConfigFrom(, 'xra');
+        // $path = __DIR__.'/../Config/xra.php';
+        // $key = 'xra';
+        // $config = app()->make('config');
+        // $config->set($key, array_merge(
+            //    require $path, $config->get($key, [])
+        // ));
+        // dddx($name);
+        // dddx();
+        // }
 
         $dir = config_path($name);
         $dir = FileService::fixPath($dir);

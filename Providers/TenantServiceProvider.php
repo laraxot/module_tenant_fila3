@@ -39,6 +39,15 @@ class TenantServiceProvider extends XotBaseServiceProvider {
     }
 
     public function mergeConfigs(): void {
+        if ($this->app->runningInConsole()) {
+            /*
+            $this->publishes([
+                __DIR__ . '/../Config/xra.php' => config_path('xra.php'),
+            ], 'config');
+            */
+            $this->mergeConfigFrom(__DIR__.'/../Config/xra.php', 'xra');
+        }
+
         $configs = TenantService::getConfigNames();
 
         foreach ($configs as $v) {
