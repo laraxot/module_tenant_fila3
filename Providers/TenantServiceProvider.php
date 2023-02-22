@@ -6,6 +6,7 @@ namespace Modules\Tenant\Providers;
 
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Schema;
 use Modules\Tenant\Services\TenantService;
@@ -45,7 +46,11 @@ class TenantServiceProvider extends XotBaseServiceProvider {
                 __DIR__ . '/../Config/xra.php' => config_path('xra.php'),
             ], 'config');
             */
+            $name = TenantService::getName();
+            File::makeDirectory(config_path($name), 0755, true, true);
             $this->mergeConfigFrom(__DIR__.'/../Config/xra.php', 'xra');
+
+            return;
         }
 
         $configs = TenantService::getConfigNames();
