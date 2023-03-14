@@ -44,9 +44,16 @@ class TenantServiceProvider extends XotBaseServiceProvider
     public function mergeConfigs(): void
     {
 
-
-        if ($this->app->runningUnitTests()) {
-
+        /*
+        dddx([
+            'base_path' => base_path(),
+            'path1' => realpath(__DIR__ . '/../../../'),
+            'run' => $this->app->runningUnitTests(),
+            'run1' => $this->app->runningInConsole(),
+        ]);
+        */
+        //if ($this->app->runningUnitTests()) {
+        if (base_path() !=  realpath(__DIR__ . '/../../../')) {
             //$this->publishes([
             //    __DIR__ . '/../Config/xra.php' => config_path('xra.php'),
             //], 'config');
