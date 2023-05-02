@@ -23,4 +23,10 @@ return [
             // 'files menu_builder' => 'docs/menu_builder',
         ],
     ],
+    'Links' => [
+        'url' => '#',
+        'children' => [
+            'links' => 'docs/links/links',
+        ],
+    ],
 ];
