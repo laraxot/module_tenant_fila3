@@ -2,6 +2,10 @@
 vendor/
 node_modules/
 npm-debug.log
+*.cache
+*.phar
+*.lock
+package-lock.json
 yarn-error.log
 
 # Laravel 4 specific
@@ -24,6 +28,7 @@ Homestead.json
 .phpunit.result.cache
 
 *.lock
+package-lock.json
 *.stackdump
 *.cache
 *.log
