@@ -33,3 +33,5 @@ package-lock.json
 *.cache
 *.log
 .git-rewrite
+package-lock.json 
+/docs/package-lock.json 
