@@ -16,6 +16,7 @@ use Illuminate\Support\Str;
 use Modules\Cms\Services\PanelService;
 use Modules\Xot\Services\FileService;
 use Nwidart\Modules\Facades\Module;
+use function Safe\preg_replace;
 
 /**
  * Class TenantService.
