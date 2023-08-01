@@ -7,17 +7,19 @@ namespace Modules\Tenant\Services;
 use Exception;
 // use Illuminate\Support\Facades\Storage;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Webmozart\Assert\Assert;
-use function Safe\preg_replace;
-use Illuminate\Support\Collection;
-use Nwidart\Modules\Facades\Module;
-use Illuminate\Support\Facades\File;
-use Modules\Xot\Services\FileService;
-use Illuminate\Support\Facades\Config;
-use Modules\Cms\Services\PanelService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Modules\Cms\Services\PanelService;
+use Modules\Xot\Services\FileService;
+use Nwidart\Modules\Facades\Module;
+
+use function Safe\preg_replace;
+
+use Webmozart\Assert\Assert;
 
 /**
  * Class TenantService.
@@ -48,7 +50,7 @@ class TenantService {
             $server_name = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'];
         }
 
-        Assert::string($server_name = Str::replace('www.', '', $server_name),'wip');
+        Assert::string($server_name = Str::replace('www.', '', $server_name), 'wip');
         // */
         // $server_name = getServerName();
         // die('<pre>'.print_r($_SERVER,true).'</pre>');

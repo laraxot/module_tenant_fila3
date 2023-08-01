@@ -14,16 +14,14 @@ use Modules\Xot\Providers\XotBaseServiceProvider;
 
 use function Safe\realpath;
 
-class TenantServiceProvider extends XotBaseServiceProvider
-{
+class TenantServiceProvider extends XotBaseServiceProvider {
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
 
     public string $module_name = 'tenant';
 
-    public function bootCallback(): void
-    {
+    public function bootCallback(): void {
         $this->mergeConfigs();
 
         if (Request::has('act') && 'migrate' === Request::input('act')) {
@@ -43,8 +41,7 @@ class TenantServiceProvider extends XotBaseServiceProvider
         Relation::morphMap($map);
     }
 
-    public function mergeConfigs(): void
-    {
+    public function mergeConfigs(): void {
         /*
         dddx([
             'base_path' => base_path(),
@@ -75,7 +72,6 @@ class TenantServiceProvider extends XotBaseServiceProvider
 
     // end mergeConfigs
 
-    public function registerCallback(): void
-    {
+    public function registerCallback(): void {
     }
 }
