@@ -101,7 +101,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'email' => 'lu::auth.emails.password',
-            'connection' => 'liveuser_general',
+            // 'connection' => 'user',
+            'connection' => 'user',
         ],
     ],
 ];
