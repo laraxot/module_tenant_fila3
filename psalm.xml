@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="3"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
+>
+    <projectFiles>
+        <file name="Config/config.php"/>
+        <file name="Config/test.php"/>
+        <file name="Config/xra.php"/>
+        <file name="Database/Seeders/TenantDatabaseSeeder.php"/>
+        <file name="Providers/RouteServiceProvider.php"/>
+        <file name="Providers/TenantServiceProvider.php"/>
+        <file name="Resources/views/index.blade.php"/>
+        <file name="Routes/api.php"/>
+        <file name="Routes/web.php"/>
+        <file name="Services/TenantService.php"/>
+        <file name="docs/bootstrap.php"/>
+        <file name="docs/config.php"/>
+        <file name="docs/config.production.php"/>
+        <file name="docs/listeners/GenerateSitemap.php"/>
+        <file name="docs/navigation.php"/>
+        <file name="docs/source/404.blade.php"/>
+        <file name="docs/source/index.blade.php"/>
+        <file name="vendor/autoload.php"/>
+        <file name="vendor/composer/ClassLoader.php"/>
+        <file name="vendor/composer/InstalledVersions.php"/>
+        <file name="vendor/composer/autoload_classmap.php"/>
+        <file name="vendor/composer/autoload_files.php"/>
+        <file name="vendor/composer/autoload_namespaces.php"/>
+        <file name="vendor/composer/autoload_psr4.php"/>
+        <file name="vendor/composer/autoload_real.php"/>
+        <file name="vendor/composer/autoload_static.php"/>
+        <file name="vendor/composer/installed.php"/>
+        <file name="vendor/composer/platform_check.php"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+<plugins><pluginClass class="Psalm\LaravelPlugin\Plugin"/></plugins></psalm>
