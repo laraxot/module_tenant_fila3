@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Tenant\Services;
 
-use const DIRECTORY_SEPARATOR;
-
 // use Illuminate\Support\Facades\Storage;
+
+use const DIRECTORY_SEPARATOR;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
