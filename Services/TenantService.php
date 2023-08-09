@@ -36,7 +36,8 @@ class TenantService {
     /**
      * Undocumented function.
      */
-    public static function getName(array $params = []): string {
+    //public static function getName(array $params = []): string {
+    public static function getName(): string {
         // *
         $default = env('APP_URL');
         if (! \is_string($default)) {
