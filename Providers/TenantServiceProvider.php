@@ -12,19 +12,16 @@ use Illuminate\Support\Facades\Schema;
 use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
-use function is_array;
 use function Safe\realpath;
 
-class TenantServiceProvider extends XotBaseServiceProvider
-{
-    public string $module_name = 'tenant';
-
+class TenantServiceProvider extends XotBaseServiceProvider {
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
 
-    public function bootCallback(): void
-    {
+    public string $module_name = 'tenant';
+
+    public function bootCallback(): void {
         $this->mergeConfigs();
 
         if (Request::has('act') && 'migrate' === Request::input('act')) {
@@ -37,15 +34,14 @@ class TenantServiceProvider extends XotBaseServiceProvider
         Schema::defaultStringLength(191);
 
         $map = TenantService::config('morph_map');
-        if (! is_array($map)) {
+        if (! \is_array($map)) {
             $map = [];
         }
 
         Relation::morphMap($map);
     }
 
-    public function mergeConfigs(): void
-    {
+    public function mergeConfigs(): void {
         /*
         dddx([
             'base_path' => base_path(),
@@ -55,14 +51,14 @@ class TenantServiceProvider extends XotBaseServiceProvider
         ]);
         */
         // if ($this->app->runningUnitTests()) {
-        if (base_path() != realpath(__DIR__ . '/../../../')) {
+        if (base_path() != realpath(__DIR__.'/../../../')) {
             // $this->publishes([
             //    __DIR__ . '/../Config/xra.php' => config_path('xra.php'),
             // ], 'config');
 
             $name = TenantService::getName();
             File::makeDirectory(config_path($name), 0755, true, true);
-            $this->mergeConfigFrom(__DIR__ . '/../Config/xra.php', 'xra');
+            $this->mergeConfigFrom(__DIR__.'/../Config/xra.php', 'xra');
 
             return;
         }
@@ -76,7 +72,6 @@ class TenantServiceProvider extends XotBaseServiceProvider
 
     // end mergeConfigs
 
-    public function registerCallback(): void
-    {
+    public function registerCallback(): void {
     }
 }

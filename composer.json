@@ -21,13 +21,12 @@
         "pestphp/pest": "*",
         "pestphp/pest-plugin-laravel": "*",
         "phpunit/phpunit": "*",
-        "psalm/plugin-laravel": "^2.8",
+        "psalm/plugin-laravel": "*",
         "spatie/laravel-typescript-transformer": "*",
         "spatie/pest-plugin-snapshots": "*",
         "spatie/phpunit-snapshot-assertions": "*",
         "spatie/test-time": "*",
-        "thecodingmachine/phpstan-safe-rule": "*",
-        "tightenco/duster": "^2.2"
+        "thecodingmachine/phpstan-safe-rule": "*"
     },
     "extra": {
         "laravel": {
