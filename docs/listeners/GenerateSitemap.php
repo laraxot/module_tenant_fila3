@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -46,6 +47,8 @@ class GenerateSitemap
     }
 }
 =======
+=======
+>>>>>>> 30db2b8 (up)
 <?php
 
 declare(strict_types=1);
@@ -92,4 +95,7 @@ function ($path) use ($baseUrl, $sitemap) {
         return Str::is($this->exclude, $path);
     }
 }
+<<<<<<< HEAD
 >>>>>>> 8d95d96 (up)
+=======
+>>>>>>> 30db2b8 (up)

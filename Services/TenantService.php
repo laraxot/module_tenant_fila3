@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -436,6 +437,8 @@ class TenantService
     }
 }
 =======
+=======
+>>>>>>> 30db2b8 (up)
 <?php
 
 declare(strict_types=1);
@@ -857,4 +860,7 @@ class TenantService {
         return $rows;
     }
 }
+<<<<<<< HEAD
 >>>>>>> 8d95d96 (up)
+=======
+>>>>>>> 30db2b8 (up)

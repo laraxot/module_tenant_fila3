@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -11,6 +12,8 @@ return [
     'pub_theme' => 'One',
 ];
 =======
+=======
+>>>>>>> 30db2b8 (up)
 <?php
 
 
@@ -20,5 +23,9 @@ return [
     'main_module' => 'PFed',
     'primary_lang' => 'it',
     'pub_theme' => 'One',
+<<<<<<< HEAD
 ];
 >>>>>>> 8d95d96 (up)
+=======
+];
+>>>>>>> 30db2b8 (up)

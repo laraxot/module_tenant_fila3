@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -82,6 +83,8 @@ class TenantServiceProvider extends XotBaseServiceProvider
     }
 }
 =======
+=======
+>>>>>>> 30db2b8 (up)
 <?php
 
 declare(strict_types=1);
@@ -159,4 +162,7 @@ class TenantServiceProvider extends XotBaseServiceProvider {
     public function registerCallback(): void {
     }
 }
+<<<<<<< HEAD
 >>>>>>> 8d95d96 (up)
+=======
+>>>>>>> 30db2b8 (up)

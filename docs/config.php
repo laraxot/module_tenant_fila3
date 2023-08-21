@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -69,6 +70,8 @@ return [
     },
 ];
 =======
+=======
+>>>>>>> 30db2b8 (up)
 <?php
 
 use Illuminate\Support\Str;
@@ -135,5 +138,9 @@ return [
     'children' => function ($page, $docs) {
         return $docs->where('parent_id', $page->id);
     },
+<<<<<<< HEAD
 ];
 >>>>>>> 8d95d96 (up)
+=======
+];
+>>>>>>> 30db2b8 (up)
