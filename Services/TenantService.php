@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Tenant\Services;
 
-use Exception;
+use const DIRECTORY_SEPARATOR;
 
 // use Illuminate\Support\Facades\Storage;
 
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -22,12 +23,9 @@ use Request;
 use Webmozart\Assert\Assert;
 
 use function chr;
-
 use function is_array;
 use function is_string;
 use function Safe\preg_replace;
-
-use const DIRECTORY_SEPARATOR;
 
 /**
  * Class TenantService.
