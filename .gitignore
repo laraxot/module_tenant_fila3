@@ -35,3 +35,7 @@ package-lock.json
 .git-rewrite
 package-lock.json 
 /docs/package-lock.json 
+*.lock
+*.lock
+*.lock
+package-lock.json
