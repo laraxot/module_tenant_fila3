@@ -35,7 +35,11 @@ package-lock.json
 .git-rewrite
 package-lock.json 
 /docs/package-lock.json 
+<<<<<<< HEAD
 *.lock
 *.lock
 *.lock
 package-lock.json
+=======
+/build
+>>>>>>> ab8766b (.)
