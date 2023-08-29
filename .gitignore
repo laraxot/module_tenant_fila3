@@ -36,6 +36,7 @@ package-lock.json
 package-lock.json 
 /docs/package-lock.json 
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.lock
 *.lock
 *.lock
@@ -43,3 +44,6 @@ package-lock.json
 =======
 /build
 >>>>>>> ab8766b (.)
+=======
+/build
+>>>>>>> master
